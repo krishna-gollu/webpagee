@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Webpage</title>
+        <link rel="icon" href="w.jpg" type="image">
+        <link rel="stylesheet" href="page.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    </head>
+    <body >
+        <img src="ss.jpg" width="70px" height="75px" id="image"  onmouseover="change();" onmouseout="unchange();">
+        <!-- <div id="div3">
+            <a href="#">
+                <img src="3icon.jpg" height="50px" width="50px">
+                <ul>
+                    <li>Home</li>
+                    <li>Exam</li>
+                    <li>BRANCH</li>
+                    <li>About us</li>
+                    <li>CONTACT</li>
+                </ul>
+            </a>
+        </div> -->
+        <h1 class="heading">HOME PAGE</h1>
+        <ul id ="menu">
+                <li><a href="#" onclick="window.location.reload();"><i class="fa-solid fa-house">HOME</b></a></li>
+                <li><a href="#"><i class="fa-solid fa-book"></i>EXAM</b></a>
+                    <ul>
+                        <li><a href="Register.html">Register</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                <li>
+                    <a><i class="fa-solid fa-code-branch"></i>BRANCH</b></a>
+                    <ul>
+                        <li>
+                            <a href="#">CSE</a>
+                            <ul>
+                                <li><a href="#">Faculty</a>
+                                    <ul>
+                                        <li><a href="Register.html">Register</a></li>
+                                        <li><a href="login.html">Login</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Students</a>
+                                    <ul>
+                                        <li><a href="Register.html">Register</a></li>
+                                        <li><a href="login.html">Login</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">ECE</a></li>
+                        <li><a href="#">MECH</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-phone"></i>CONTACT</a></li>
+            </ul>
+            <div id = "boxes">
+                  
+                <div id = "leftbox">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for id.." title="Type in a name">
+                    <ul id="myUL">
+                        <li><a href="#"></a></li>
+                        <li><a href="#">N180607</a></li>
+                        <li><a href="#">N180187</a></li>
+                        <li><a href="#">N180212</a></li>
+                        <li><a href="#">N180784</a></li>
+                        <li><a href="#">N180622</a></li>
+                        <li><a href="#">N180718</a></li>
+                        <li><a href="#">N180641</a></li>
+                    </ul>
+                </div>
+    
+                <script>
+                function myFunction() {
+                    var input, filter, ul, li, a, i, txtValue;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("myUL");
+                    li = ul.getElementsByTagName("li");
+                    for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } 
+                    else {
+                        li[i].style.display = "none";
+                    }
+                    }
+                }
+                </script>
+                </div> 
+                  
+                <div id = "middlebox">
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                          <div class="numbertext">1 / 3</div>
+                          <img id="i1" src="entrance.jpg" width="740px" height="440px">
+                      </div>
+                      <div class="mySlides fade">
+                        <div class="numbertext">2 / 3</div>
+                        <img id="i2" src="C:\Users\SAI HARITHA\Picturesclg.jpg" width="740px" height="440px">
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">3 / 3</div>
+                            <img id="i3" src="student.jpg" width="740px" height="440px">
+                        </div>
+                        <div class="mySlides fade">
+                          <div class="numbertext">4 / 3</div>
+                          <img id="i3" src="do.jpg" width="740px" height="440px">
+                        </div>
+                         <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+                        
+                        </div>
+                        <br>
+                        
+                        <div style="text-align:center">
+                          <span class="dot" onclick="currentSlide(1)"></span> 
+                          <span class="dot" onclick="currentSlide(2)"></span> 
+                          <span class="dot" onclick="currentSlide(3)"></span> 
+                        </div>
+                        
+                        <script>
+                        let slideIndex = 1;
+                        showSlides(slideIndex);
+                        
+                        function plusSlides(n) {
+                          showSlides(slideIndex += n);
+                        }
+                        
+                        function currentSlide(n) {
+                          showSlides(slideIndex = n);
+                        }
+                        
+                        function showSlides(n) {
+                          let i;
+                          let slides = document.getElementsByClassName("mySlides");
+                          let dots = document.getElementsByClassName("dot");
+                          if (n > slides.length) {slideIndex = 1}    
+                          if (n < 1) {slideIndex = slides.length}
+                          for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";  
+                          }
+                          for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                          }
+                          slides[slideIndex-1].style.display = "block";  
+                          dots[slideIndex-1].className += " active";
+                        }
+                        </script>
+                </div>
+                  
+                <div id = "rightbox">
+                    <center><h2>Notifications</h2></center>
+                    <div>
+                        <marquee direction="up" id="marq">
+                            <a href="https://examcell.rguktn.ac.in/"><h2>E2 sem1 Results 12-07-2021</h2></a>
+                            <a href="https://examcell.rguktn.ac.in/"><h2>Exam updates</h2></a>
+                            <a href="https://examcell.rguktn.ac.in/"><h2>Updated time table</h2></a>
+                        </marquee>
+                    </div>
+                </div>
+            <footer id="foot">
+                <p><small>copy right &copy; 2022 #CSE Aspirants</p>
+                <div class="footc">
+                    ViewCount:
+                    <img src="https://hitwebcounter.com/counter/counter.php?page=8003940&style=0001&nbdigits=5&type=page&initCount=100" title="Free Counter" Alt="web counter"   border="0" /></a> 
+                </div>
+                </footer>
+    </body>
+</html>
+
+                        
+                        
+                       
